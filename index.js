@@ -9,26 +9,33 @@ for (var i = 0; i < document.querySelectorAll(".set button, spanJ").length; i++)
 
 { document.querySelectorAll(".set button")[i].addEventListener("click",
  function() { 
-     var inner = this.innerHTML; 
-     switch (inner) {
-         case "w":
-             bf.play();
-             break;
-     case "a":
-         t.play();
-         break;
-         case "s":
-             kch.play();
-             break;
-             case "d":
-                 scratch.play();
-                 break;
-                 case "j":
-                     yo.play();
-                     break;
-                     case "k":
-                         setBeat.play();
-             break;
+     var innerText = this.innerText; 
+     keyBoard(innerText);
      }
-    } );
+     );
+}
+document.addEventListener("keypress", function (event){
+    keyBoard(event.key);
+})
+function keyBoard (keyBoard) {
+    switch (keyBoard) {
+        case "w":
+            bf.play();
+            break;
+    case "a": 
+    t.play();
+    break;
+    case "s":
+        kch.play();
+        break;
+        case "d":
+            scratch.play();
+            break;
+            case "j":
+                yo.play();
+                break;
+                case "k":
+                    setBeat.play();
+            break;
+    }
 }
